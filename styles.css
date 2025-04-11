@@ -1,0 +1,151 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+
+:root {
+  --background-color-dark: #3a506b;
+  --explain-box-background-dark: #4C698C;
+  --color-text-light: #eaeaea;
+  --color-display-monitor: #f1faee;
+  --cash-color: #212529;
+  --cid-color: #269b06;
+  --cid-zero: #fe5d26;
+  --accent-color: #EAC815;
+}
+
+
+
+body {
+  background-color: var(--background-color-dark);
+}
+
+h1 {
+  margin-top: 25px;
+  text-align: center;
+  color: var(--color-text-light);
+}
+
+#cash-register-container {
+  margin: 20px auto;
+  padding: 10px;
+  width: 550px;
+  height: 520px;
+}
+
+#cash-register-display {
+  margin: 20px auto 0 auto;
+  padding: 10px;
+  width: 100%;
+  height: 325px;
+  background-color: var(--color-display-monitor);
+  border: 10px solid var(--cash-color);
+}
+
+#values-information {
+  padding: 0 2%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+
+}
+
+#price-container {
+  width: 25%;
+  text-align: center;
+}
+
+#price-value {
+  height: 60px;
+}
+
+
+#customer-input {
+  display: flex;
+  flex-direction: column;
+  border: none;
+  height: 80px;
+  width: 50%;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 5px;
+}
+
+#cash {
+  text-align: right;
+  padding: 3px;
+  height: 30px;
+  width: 150px;
+  font-size: 15px;
+}
+
+#purchase-btn {
+  margin-top: 2px;
+  cursor: pointer;
+  background: linear-gradient(180deg, #fe5d26 10%, #8d3416 70%);
+  color: var(--color-text-light);
+  font-weight: 500;
+  border-radius: 5px;
+  border: 1px solid #8d3416;
+  height: 30px;
+  padding: 0 5px;
+}
+
+#purchase-btn:hover {
+  background: linear-gradient(180deg, #8d3416 10%, #fe5d26 70%);
+  color: var(--color-text-light);
+  border: 1px solid transparent;
+}
+
+
+
+#cash-information {
+  display: flex;
+  flex-direction: row;
+  column-gap: 15%;
+  border-top: 2px solid black;
+  height: 228px;
+  font-family: Garamond, serif;
+
+}
+
+
+#cash-information h3 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+
+#change-in-drawer-container,
+#change-due-container {
+  margin-top: 10px;
+  font-size: 0.9em;
+}
+
+#change-due-container {
+  text-wrap: wrap;
+}
+
+.cid-span-value {
+  color: var(--cid-color);
+}
+
+
+#monitor-stand {
+  width: 60px;
+  height: 80px;
+  background-color: var(--cash-color);
+  margin: 0 auto;
+}
+
+#cash-register-drawer {
+  margin: 0 auto;
+  height: 120px;
+  background-color: var(--cash-color);
+  outline: 2px solid rgb(112, 104, 104);
+  outline-offset: -15px;
+}
