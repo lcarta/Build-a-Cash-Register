@@ -128,7 +128,3 @@ const updateCid = (unitChange) => {
 purchaseBtn.addEventListener('click', () => {
   (!cashInput.value) ? alert("Insert a customer's cash value") : purchase()
 })
-
-
-
-
