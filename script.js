@@ -100,7 +100,7 @@ const calculateChange = (changeValue) => {
       if (unitChange && changeValue === 0) {
         console.log(cid, cidBackup);
         cid = JSON.parse(JSON.stringify(cidBackup));
-        if (checks.checkZeroFunds()) { } isCashOpen = false;
+        if (checks.checkZeroFunds()) isCashOpen = false;
       }
     } else {
       isNotEnoughFunds = true;
