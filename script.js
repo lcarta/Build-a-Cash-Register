@@ -34,6 +34,7 @@ let unitsAmounts = [
 
 let isCashOpen = false;
 let isNotEnoughFunds = false;
+let isZeroFunds = false;
 let cidBackup = [];
 let cashAmounts = {};
 let cashValue = 0;
@@ -73,6 +74,7 @@ const updateDisplay = () => {
 updateDisplay();
 
 const purchase = () => {
+  if (isZeroFunds) return
   cidBackup = JSON.parse(JSON.stringify(cid));
   cashValue = Number(cashInput.value);
   let changeValue = Number((cashValue - price).toFixed(2));
@@ -97,15 +99,17 @@ const calculateChange = (changeValue) => {
       cashAmounts[unitChange[0]] ? cashAmounts[unitChange[0]]++ : cashAmounts[unitChange[0]] = 1;
       changeValue = Number((changeValue - unitChange[1]).toFixed(2));
       updateCid(unitChange);
-      if (unitChange && changeValue === 0) {
+      if (changeValue === 0) {
         console.log(cid, cidBackup);
         cid = JSON.parse(JSON.stringify(cidBackup));
-        if (checks.checkZeroFunds()) isCashOpen = false;
       }
     } else {
       isNotEnoughFunds = true;
       changeValue = 0;
-
+    }
+    if (checks.checkZeroFunds()) {
+      isZeroFunds = true;
+      isCashOpen = false;
     }
     updateDisplay();
   }
